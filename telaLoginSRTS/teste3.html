@@ -1,0 +1,318 @@
+<html id="extr-page"><head>
+	<meta charset="utf-8">
+	<title> SISREF - Sistema de Registro de Frequência </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- #CSS Links -->
+	<!-- Basic Styles -->
+	<link rel="stylesheet" type="text/css" media="screen" href="http://sisref.saude.df.gov.br/layout/sigs/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://sisref.saude.df.gov.br/layout/sigs/css/font-awesome.min.css">
+
+	<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+	<link rel="stylesheet" type="text/css" media="screen" href="http://sisref.saude.df.gov.br/layout/sigs/css/smartadmin-production-plugins.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://sisref.saude.df.gov.br/layout/sigs/css/smartadmin-production.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://sisref.saude.df.gov.br/layout/sigs/css/smartadmin-skins.min.css">
+
+
+
+	<!-- SmartAdmin RTL Support -->
+	<link rel="stylesheet" type="text/css" media="screen" href="http://sisref.saude.df.gov.br/layout/sigs/css/smartadmin-rtl.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://sisref.saude.df.gov.br/layout/sigs/css/sigs.css?v=1">
+
+	<!-- We recommend you use "your_style.css" to override SmartAdmin
+		 specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		 <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+		 <!-- #FAVICONS -->
+		 <link rel="shortcut icon" href="http://sisref.saude.df.gov.br/layout/sigs/img/favicon/favicon.ico" type="image/x-icon">
+		 <link rel="icon" href="http://sisref.saude.df.gov.br/layout/sigs/img/favicon/favicon.ico" type="image/x-icon">
+
+		 <!-- #GOOGLE FONT -->
+		 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+		 <!-- #APP SCREEN / ICONS -->
+	<!-- Specifying a Webpage Icon for Web Clip
+		Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="http://sisref.saude.df.gov.br/layout/sigs/img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="http://sisref.saude.df.gov.br/layout/sigs/img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="http://sisref.saude.df.gov.br/layout/sigs/img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="http://sisref.saude.df.gov.br/layout/sigs/img/splash/touch-icon-ipad-retina.png">
+
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="http://sisref.saude.df.gov.br/layout/sigs/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="http://sisref.saude.df.gov.br/layout/sigs/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="http://sisref.saude.df.gov.br/layout/sigs/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+
+
+<style>
+
+        .carregar {
+            display:    none;
+            position:   fixed;
+            z-index:    100000000;
+            top:        0;
+            left:       0;
+            height:     100%;
+            width:      100%;
+            background: rgba( 255, 255, 255, .8 )
+            url('http://sisref.saude.df.gov.br/layout/sigs/img/load/load04.gif')
+            50% 50%
+            no-repeat;
+        }
+
+
+        body.carregando {
+            overflow: hidden;
+        }
+
+
+        body.carregando .carregar {
+            display: block;
+        }
+    </style>
+	</head>
+
+	<body class="desktop-detected">
+    <div class="carregar carregando"></div>
+
+		<header id="header">
+
+			<div id="logo-group">
+				<span id="logo"> <img class="responsive" src="http://sisref.saude.df.gov.br/layout/sigs/img/logo_sisref.png" alt="SISREF - Sistema de Registro de Frequência"> </span>
+			</div>
+
+			<!--  <span id="extr-page-header-space"> <span class="hidden-mobile hidden-xs">Não tenho acesso:</span> <a href="http://sisref.saude.df.gov.br/register" class="btn btn-danger">Criar Conta</a> </span> -->
+		</header>
+
+		<div id="main" role="main">
+			<!-- MAIN CONTENT -->
+			<div id="content" class="container animated fadeInDown">
+								<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+						<h1 class="txt-color-red login-header-big">SISREF - Sistema de Registro de Frequência</h1>
+
+						<div class="row">
+
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+								<div class="mt-20 mb-20 text-center">
+
+									<p style="line-height: 22px;" class="text-justify">
+											O <strong>SISREF</strong> é um sistema que permite fazer o download das folhas de frequências dos servidores da SES/DF.
+									</p>
+								</div>
+								<div class="clearfix"></div>
+
+								<div class="mt-20">
+									<a data-toggle="modal" href="#modal_ajuda" class="btn btn-warning btn-sm"> <i class="fa fa-question-circle" aria-hidden="true"></i> Informações</a>
+								</div>
+							</div>
+
+
+						</div>
+
+						<div class="clearfix"></div>
+
+						
+
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+
+						    <div class="well no-padding">
+        <form role="form" method="POST" action="http://sisref.saude.df.gov.br/login" id="login-form" class="smart-form client-form" autocomplete="off">
+        <input type="hidden" name="_token" value="mjMLuORU5aR3SRFCDT2CjG9v0ozY2ZoePgrzZD5v">
+            <header>
+                Acesso ao Sistema
+            </header>
+            <fieldset>
+                <section class="form-group ">
+                     
+                        
+                    <label class="label"><strong>Usuário</strong></label>
+                    <label class="input"> <i class="icon-append fa fa-user"></i>
+                        <input type="text" name="NMO_LOGIN" value="" placeholder="Digite seu Usuário da REDE SES/DF" required="">
+                        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Informe seu usuário de acesso a REDE SES/DF.</b>
+                    </label>
+                        
+                </section>
+                <section class="form-group ">
+                    <label class="label"><strong>Senha</strong></label>
+                    <label class="input"> <i class="icon-append fa fa-lock"></i>
+                        <input type="password" name="DSC_SENHA" value="" placeholder="Digite sua senha de acesso da REDE SES/DF" required="">
+                        <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Informe sua senha de acesso a REDE SES/DF.</b>
+                    </label>
+
+                    
+                </section>
+                <section class="form-group ">
+                    <label class="label"> <strong>Local de Acesso</strong></label>
+                        <select class="form-control " id="local_acesso" name="local_acesso" required="">
+                            <option selected="selected" value="">Selecione...</option>
+                            <option value="ses">SES</option>
+                            <option value="hemocentro">HEMOCENTRO</option>
+                        </select>
+                                    
+                </section>
+                <section>
+                    <label class="checkbox">
+                        <input type="checkbox" name="remember" checked="">
+                        <i></i>Manter conectado?</label>
+                </section>
+            </fieldset>
+            <footer>
+                <div class="">
+                    <button type="submit" class="btn btn-primary">
+                        Acessar
+                    </button>
+                </div>
+                <!-- <div class="">
+                    <a href="/register" class="btn btn-link mr-20">Criar uma conta</a> 
+                </div> -->
+            </footer>
+        </form>
+    </div>
+
+
+    
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!-- Modal MÓDULOS-->
+		<div class="modal fade" id="modal_ajuda" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h4 class="modal-title">
+							<strong> <i class="fa fa-question-circle" aria-hidden="true"></i>  INFORMAÇÔES DO SISREF</strong>
+						</h4>
+					</div>
+					<div class="modal-body no-padding text-align-justify">
+
+
+						<div class="text-justify mag-15" style="line-height: 22px">
+							<h6> Sobre o sistema:</h6>
+
+							<p>O SISREF é um <strong>Sistema de Registro de Frequência</strong> que foi desenvolvido para atender às mudanças na legislação referente ao controle de ponto, principalmente no quesito TPD. </p>
+
+							<p>O sistema gera o espelho de ponto atrvés dos dados inseridos no sistema FORPONTO. No entanto, a forma de acesso é independente entre os dois sistemas. </p>
+							
+							<p>Os usuários que se depararem com problemas relacionados à dificuldade de login no sistema, poderão abrir chamado na plataforma
+							 <a href="http://atendimentoti.saude.df.gov.br/" target="_blank">http://atendimentoti.saude.df.gov.br</a>. Já os problemas relacionados à cálculo de TPD ou de horas, estes deverão ser direcionados ao Núcleo de Escalas da Região, que poderá entrar em contato com a GEFREQ, caso necessário.</p>
+		
+							<br><br>
+
+							<div class="mag-10">
+
+								<footer class="text-align-right">
+									<button type="button" class="btn btn-danger" data-dismiss="modal">
+										Fechar
+									</button>
+								</footer>
+
+							</div>
+
+						</div>
+						</div>
+
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
+
+			<!--================================================== -->
+
+			<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+			<script> if (!window.jQuery) { document.write('<script src="http://sisref.saude.df.gov.br/layout/sigs/js/libs/jquery-2.1.1.min.js"><\/script>');} </script>
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script> if (!window.jQuery.ui) { document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');} </script>-->
+
+	<!-- IMPORTANT: APP CONFIG -->
+	<script src="http://sisref.saude.df.gov.br/layout/sigs/js/app.config.seed.js"></script>
+
+<!-- JS TOUCH : include this plugin for mobile drag / drop touch events
+	<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+
+	<!-- BOOTSTRAP JS -->
+	<script src="http://sisref.saude.df.gov.br/layout/sigs/js/bootstrap/bootstrap.min.js"></script>
+
+<!--[if IE 8]>
+
+<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+<![endif]-->
+
+<!-- MAIN APP JS FILE -->
+<script src="http://sisref.saude.df.gov.br/layout/sigs/js/app.seed.js"></script>
+<script src="http://sisref.saude.df.gov.br/layout/sigs/js/notification/SmartNotification.min.js"></script>
+<script src="http://sisref.saude.df.gov.br/layout/sigs/js/scripts.js?v="></script>
+<script src="http://sisref.saude.df.gov.br/layout/sigs/js/plugin/jquery.mask.js"></script>
+
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+
+		 
+ $body = $("body");
+
+    $(document).on({
+        ajaxStart: function() { $body.addClass("carregando");    },
+        ajaxStop: function() { $body.removeClass("carregando"); }
+    });
+
+		$('#NMO_LOGIN').mask('00000000000', {reverse: true});
+		
+		$('#modal_esqueci_senha').on('click','#btnEsqueciSenha',function(e){
+				// $('#btnEsqueciSenha').on('click', function(event){
+
+			// $('#modal_esqueci_senha').delegate('#btnEsqueciSenha','click',function(event){
+
+		
+				var url = '/login/esqueci-a-senha'
+
+				var jOption = {
+					url: url,
+					type: "post",
+					async: true,
+				// data: { '_token': 'mjMLuORU5aR3SRFCDT2CjG9v0ozY2ZoePgrzZD5v', 'COD_MEDICAMENTO': cod_medicamento },
+				idForm: 'form-esqueci-senha',
+			  //  gridRemove: objGrid,
+			  setTimeOut: 5000,
+			  nameFunctionCallback: ['esqueciSenhaSuccess'],
+			  // errorsFunctionCallback: 'catchErrors',
+			}
+
+			AjaxSalvar( jOption );
+
+		});
+
+	});
+
+
+	function esqueciSenhaSuccess(){
+
+		$(".modal-body").empty();
+
+		$(".modal-body").append('<div class="text-center"><i class="fa fa-check-circle-o fa-fw" aria-hidden="true" style="font-size:50px;color:green"></i><p>Email enviado com sucesso para seu email pessoal!</p></div>');
+		$(".modal-body").append('');
+
+	}
+  
+</script>
+<div id="divSmallBoxes"></div><div id="divMiniIcons"></div><div id="divbigBoxes"></div></body></html>

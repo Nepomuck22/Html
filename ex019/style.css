@@ -1,0 +1,34 @@
+@charset "UTF-8";
+body{
+    background-color: rgb(59, 132, 228);
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    color: rgb(63, 88, 22);
+}
+h1#principal{
+    text-align: center;
+    background-color: rgb(121, 135, 173);
+    color: rgb(255, 255, 255);
+}
+h2{
+    color: rgb(25, 58, 33);
+
+}
+.basico{
+    color: rgb(25, 58, 33);
+}
+.inter{
+    color: burlywood;
+}
+.avanca{
+    color: brown;
+}
+.destaque{
+    background-color: rgba(240, 240, 27, 0.548);
+}
+/*
+tudo o  que em html é id em css é #
+
+diferença entre id e class =>
+*/

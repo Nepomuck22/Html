@@ -1,0 +1,479 @@
+<html id="extr-page">
+
+<head>
+    <meta charset="utf-8">
+    <title> SRTS - Sistema de Regulação de Transporte Sanitário </title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- #CSS Links -->
+    <!-- Basic Styles -->
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="http://srts.saude.df.gov.br/layout/sigs/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="http://srts.saude.df.gov.br/layout/sigs/css/font-awesome.min.css">
+
+    <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="http://srts.saude.df.gov.br/layout/sigs/css/smartadmin-production-plugins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="http://srts.saude.df.gov.br/layout/sigs/css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="http://srts.saude.df.gov.br/layout/sigs/css/smartadmin-skins.min.css">
+
+
+
+    <!-- SmartAdmin RTL Support -->
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="http://srts.saude.df.gov.br/layout/sigs/css/smartadmin-rtl.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://srts.saude.df.gov.br/layout/sigs/css/sigs.css">
+
+    <!-- We recommend you use "your_style.css" to override SmartAdmin
+		 specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		 <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+    <!-- #FAVICONS -->
+    <link rel="shortcut icon" href="http://srts.saude.df.gov.br/layout/sigs/img/favicon/favicon.ico"
+        type="image/x-icon">
+    <link rel="icon" href="http://srts.saude.df.gov.br/layout/sigs/img/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- #GOOGLE FONT -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+
+
+
+    <style>
+        .carregar {
+            display: none;
+            position: fixed;
+            z-index: 100000000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, .8) url('http://srts.saude.df.gov.br/layout/sigs/img/load/load04.gif') 50% 50% no-repeat;
+        }
+
+        .header {
+            background-image: rgba(170, 170, 170, 0.747);
+            min-height: 50px;
+            padding: 5px 5px;
+            margin-bottom: 20px;
+        }
+        #logo{
+            box-shadow: rgba(128, 128, 128, 0.315);
+        }
+        
+        body.carregando {
+            overflow: hidden;
+        }
+
+        #formLogin{
+            text-align: center;
+        }
+        body.carregando .carregar {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="desktop-detected mobile-view-activated">
+    <div class="carregar carregando"></div>
+
+    <header class="header">
+
+        <div id="logo-group">
+            <span id="logo"> <img src="srts title.png" alt="SmartAdmin"> </span>
+        </div>
+
+        <!--  <span id="extr-page-header-space"> <span class="hidden-mobile hidden-xs">Não tenho acesso:</span> <a href="http://srts.saude.df.gov.br/register" class="btn btn-danger">Criar Conta</a> </span> -->
+
+    </header>
+
+    <div id="main" role="main">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+            <h1 class="txt-color-red login-header-big">SRTS - Sistema de Regulação de </h1>
+
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                    <div class="mt-20 mb-20 text-center">
+
+                        <p style="line-height: 22px;" class="text-justify">
+                            O <strong>SRTS</strong> é um sistema que permite fazer a gestão de transporte no âmbito da SES/DF.
+                        </p>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="mt-20">
+                        <a data-toggle="modal" href="#modal_ajuda" class="btn btn-warning btn-sm"> <i
+                                class="fa fa-question-circle" aria-hidden="true"></i> Informações</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="clearfix"></div>
+
+
+
+        </div>
+        <!-- MAIN CONTENT -->
+        <div id="content" class="container animated fadeInDown">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-sm-offset-4">
+
+                    <div class="well no-padding">
+                        <form role="form" method="POST" action="http://srts.saude.df.gov.br/login" id="login-form"
+                            class="smart-form client-form" autocomplete="off">
+                            <input type="hidden" name="_token" value="KxPT6dJFxTfreiAeZjOG3GBzWnQMFYMNP0U791xg">
+                            <input type="hidden" name="url" value="">
+                            <header>
+                                <h3 id="formLogin">Acesso ao Sistema</h3>
+                            </header>
+                            <fieldset>
+                                <section class="form-group ">
+                                    <label class="label">Usuário</label>
+                                    <label class="input"> <i class="icon-append fa fa-user"></i>
+                                        <input autofocus="" type="text" name="NMO_LOGIN" value=""
+                                            placeholder="Digite seu Usuário da REDE SES/DF" required="required">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
+                                            Informe seu usuário de acesso a REDE SES/DF.</b></label>
+
+                                </section>
+                                <section class="form-group ">
+                                    <label class="label">Senha</label>
+                                    <label class="input"> <i class="icon-append fa fa-lock"></i>
+                                        <input type="password" name="DSC_SENHA" value=""
+                                            placeholder="Digite sua senha de acesso da REDE SES/DF" required="required">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i>
+                                            Informe sua senha de acesso a REDE SES/DF.</b> </label>
+
+                                    <div class="note text-align-right">
+
+                                        <a data-toggle="modal" href="#modal_esqueci_senha"
+                                            data-action="bntEsqueciSenha">Esqueci a Senha</a>
+
+                                    </div>
+
+                                </section>
+
+                                <section class="form-group ">
+                                    <label class="label">Local de Acesso</label>
+                                    <select class="form-control jsSelect2" id="tipo_acesso" name="tipo_acesso"
+                                        required="">
+                                        <option selected="selected" value="">Selecione...</option>
+                                        <option value="Interno">SES</option>
+                                        <option value="Externo">Acesso Externo</option>
+                                    </select>
+
+                                    <div class="note">
+
+                                        <!-- <a href="/usuario/solicitacao-recuperar-senha">Recuperar Senha</a> -->
+
+                                    </div>
+
+                                </section>
+                                <section>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="remember" checked="">
+                                        <i></i>Manter conectado?</label>
+                                </section>
+                            </fieldset>
+                            <footer>
+                                <div class="">
+                                    <button type="submit" class="btn btn-primary">
+                                        Acessar
+                                    </button>
+                                </div>
+                                <div class="">
+                                    <a href="/register" class="btn btn-link mr-20">Criar uma conta</a>
+                                </div>
+                            </footer>
+                        </form>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <!-- Modal MÓDULOS-->
+    <div class="modal fade" id="modal_ajuda" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title">
+                        <strong> <i class="fa fa-question-circle" aria-hidden="true"></i> AJUDA DO SISLEITOS</strong>
+                    </h4>
+                </div>
+                <div class="modal-body no-padding text-align-justify">
+
+
+                    <div class="text-justify mag-15" style="line-height: 22px">
+                        <h6> O que é o SISLEITOS?</h6>
+
+                        <p>O SISLEITOS é um <strong>Sistema de Regulação de Leitos</strong> que prioriza e oferece
+                            suporte ao processo de internação. </p>
+
+                        <p>Ele permite o mapeamentos dos leitos conforme especialidades disponiveis para internação em
+                            cada unidade de saúde. </p>
+
+
+
+                        <br><br>
+                        <h6>Como se cadastrar?</h6>
+
+                        <p>Efetue o download do manual do SISLEITOS clicando no botão abaixo: </p>
+
+                        <div class="text-center mt-20">
+                            <a href="/manuais/manual_cadastro_sisleitos.pdf" target="_blank"
+                                class="btn btn-lg btn-warning">
+                                <i class="fa fa-download" aria-hidden="true"></i> Download do Manual
+                            </a>
+                        </div>
+
+                        <br><br>
+
+
+
+                        <div class="mag-10">
+
+
+                            <footer class="text-align-right">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                    Fechar
+                                </button>
+                            </footer>
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <!-- Modal REEMVIAR EMAIL DE ATIVAÇÃO-->
+    <div class="modal fade" id="modal_esqueci_senha" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title">
+                        <strong><i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                            ESQUECI A SENHA</strong>
+                    </h4>
+                </div>
+                <div class="modal-body no-padding">
+
+                    <div class="mag-15 mt-30">
+                        <legend class="alert alert-warning ">
+                            <p> <strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ATENÇÃO:</strong>
+                                Essa opção somente é válida para usuários que possuem <strong>acesso externo</strong>.
+                            </p>
+                            <p> Servidores da SES devem usar Login e Senha da Rede SES. Caso tenha esquecido, favor
+                                abrir chamado em <a href="atendimentoti.saude.df.gov.br" target="_blank">
+                                    atendimentoti.saude.df.gov.br</a>.</p>
+                        </legend>
+                    </div>
+
+                    <div class="mag-10">
+
+
+                        <div class="alert alert-danger print-error-msg" style="display:none">
+
+                            <ul></ul>
+
+                        </div>
+
+
+
+                        <form id="form-esqueci-senha" method="post" class="">
+
+
+
+                            <input type="hidden" name="_token" value="KxPT6dJFxTfreiAeZjOG3GBzWnQMFYMNP0U791xg">
+
+                            <fieldset class="pt-5" style="padding: 5px 15px 5px;">
+                                <div class=" no-padding">
+
+                                    <div class="col col-xs-12 col-md-12">
+                                        <section class=" form-group  ">
+
+                                            <label for="NMO_LOGIN" class="control-label   pb-5">Usuário (*)</label>
+                                            <div class="input">
+
+
+                                                <input class="form-control" placeholder="Digite seu nome de usuário"
+                                                    name="NMO_LOGIN" type="text" id="NMO_LOGIN" maxlength="11">
+
+
+                                            </div>
+
+                                            <span class="help-block pt-5" data-field-error="NMO_LOGIN">
+                                                <em for="NMO_LOGIN" class="invalid "><strong></strong></em>
+                                            </span>
+                                        </section>
+
+
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                                <br>
+                                <br>
+                            </fieldset>
+                        </form>
+
+                        <footer class="text-align-right">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Fechar
+                            </button>
+                            <button type="button" id="btnEsqueciSenha" data-action="btnEsqueciSenha"
+                                class="btn btn-primary">
+                                Enviar
+                            </button>
+                        </footer>
+
+                    </div>
+
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+    <!--================================================== -->
+
+    <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script> if (!window.jQuery) { document.write('<script src="http://srts.saude.df.gov.br/layout/sigs/js/libs/jquery-2.1.1.min.js"><\/script>'); } </script>
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script> if (!window.jQuery.ui) { document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');} </script>-->
+
+    <!-- IMPORTANT: APP CONFIG -->
+    <script src="http://srts.saude.df.gov.br/layout/sigs/js/app.config.seed.js"></script>
+
+    <!-- JS TOUCH : include this plugin for mobile drag / drop touch events
+	<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+
+    <!-- BOOTSTRAP JS -->
+    <script src="http://srts.saude.df.gov.br/layout/sigs/js/bootstrap/bootstrap.min.js"></script>
+
+    <!--[if IE 8]>
+
+<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+<![endif]-->
+
+    <!-- MAIN APP JS FILE -->
+    <script src="http://srts.saude.df.gov.br/layout/sigs/js/app.seed.js"></script>
+    <script src="http://srts.saude.df.gov.br/layout/sigs/js/notification/SmartNotification.min.js"></script>
+    <script src="http://srts.saude.df.gov.br/layout/sigs/js/scripts.js?v=0.1.2"></script>
+    <script src="http://srts.saude.df.gov.br/layout/sigs/js/plugin/jquery.mask.js"></script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+            $body = $("body");
+
+            $(document).on({
+                ajaxStart: function () { $body.addClass("carregando"); },
+                ajaxStop: function () { $body.removeClass("carregando"); }
+            });
+
+            $('#NMO_LOGIN').mask('00000000000', { reverse: true });
+
+            $('#modal_esqueci_senha').on('click', '#btnEsqueciSenha', function (e) {
+                // $('#btnEsqueciSenha').on('click', function(event){
+
+                // $('#modal_esqueci_senha').delegate('#btnEsqueciSenha','click',function(event){
+
+
+                var url = '/login/esqueci-a-senha'
+
+                var jOption = {
+                    url: url,
+                    type: "post",
+                    async: true,
+                    // data: { '_token': 'KxPT6dJFxTfreiAeZjOG3GBzWnQMFYMNP0U791xg', 'COD_MEDICAMENTO': cod_medicamento },
+                    idForm: 'form-esqueci-senha',
+                    //  gridRemove: objGrid,
+                    setTimeOut: 5000,
+                    nameFunctionCallback: ['esqueciSenhaSuccess'],
+                    // errorsFunctionCallback: 'catchErrors',
+                }
+
+                AjaxSalvar(jOption);
+
+            });
+
+        });
+
+
+        function esqueciSenhaSuccess() {
+
+            $(".modal-body").empty();
+
+            $(".modal-body").append('<div class="text-center"><i class="fa fa-check-circle-o fa-fw" aria-hidden="true" style="font-size:50px;color:green"></i><p>Email enviado com sucesso para seu email pessoal!</p></div>');
+            $(".modal-body").append('');
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+    <script>
+
+
+    </script>
+
+
+
+
+
+
+    <div id="divSmallBoxes"></div>
+    <div id="divMiniIcons"></div>
+    <div id="divbigBoxes"></div>
+</body>
+
+</html>
